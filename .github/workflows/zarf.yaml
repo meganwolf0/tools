@@ -1,0 +1,17 @@
+name: Build and Push Zarf GHCR Image
+
+on:
+  push:
+    paths:
+      - 'zarf/**'
+      - '.github/workflows/zarf-image-build.yaml'
+    branches:
+      - main
+
+jobs:
+  package-create:
+    uses: ./.github/workflows/build-image.yaml
+    secrets: inherit
+    with:
+      REPO_NAME: zarf
+      TAG: v0.28.2
