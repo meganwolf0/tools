@@ -6,7 +6,7 @@ ARG ZARF_VER
 RUN apk add --no-cache curl sudo
 
 # Install zarf
-RUN curl -L -o zarf_v${ZARF_VER}_Linux_amd64 https://github.com/defenseunicorns/zarf/releases/download/v${ZARF_VER}/zarf_v${ZARF_VER}_Linux_amd64 && \
-	chmod +x ./zarf_v${ZARF_VER}_Linux_amd64 && sudo mv ./zarf_v${ZARF_VER}_Linux_amd64 /usr/local/bin/zarf && \
-	curl -L -o zarf-init-amd64-v${ZARF_VER}.tar.zst https://github.com/defenseunicorns/zarf/releases/download/v${ZARF_VER}/zarf-init-amd64-v${ZARF_VER}.tar.zst  && \
-	mkdir ${HOME}/.zarf-cache && mv ./zarf-init-amd64-v${ZARF_VER}.tar.zst ${HOME}/.zarf-cache/
+RUN curl -L -o zarf_${ZARF_VER}_Linux_amd64 https://github.com/defenseunicorns/zarf/releases/download/${ZARF_VER}/zarf_${ZARF_VER}_Linux_amd64 && \
+	chmod +x ./zarf_${ZARF_VER}_Linux_amd64 && sudo mv ./zarf_${ZARF_VER}_Linux_amd64 /usr/local/bin/zarf && \
+	curl -L -o zarf-init-amd64-${ZARF_VER}.tar.zst https://github.com/defenseunicorns/zarf/releases/download/${ZARF_VER}/zarf-init-amd64-${ZARF_VER}.tar.zst  && \
+	mkdir ${HOME}/.zarf-cache && mv ./zarf-init-amd64-${ZARF_VER}.tar.zst ${HOME}/.zarf-cache/
