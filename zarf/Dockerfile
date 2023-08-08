@@ -3,7 +3,7 @@ FROM alpine:3.18
 ARG ZARF_VER
 
 # Install necessary tools
-RUN apk add --no-cache curl sudo
+RUN apk add --no-cache curl sudo git
 
 # Install zarf
 RUN curl -L -o zarf_${ZARF_VER}_Linux_amd64 https://github.com/defenseunicorns/zarf/releases/download/${ZARF_VER}/zarf_${ZARF_VER}_Linux_amd64 && \
